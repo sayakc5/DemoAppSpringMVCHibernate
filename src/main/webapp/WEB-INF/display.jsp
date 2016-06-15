@@ -11,7 +11,7 @@
 <title>All Users</title>
 </head>
 <body>
-<a href="insert">Register Here!!</a><br/><br/>
+
 <table border="2">
                 <thead>
                     <tr>

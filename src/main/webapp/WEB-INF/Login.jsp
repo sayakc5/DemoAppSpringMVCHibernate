@@ -16,6 +16,8 @@
 UserId:   <input type="text"  name="userid"/><br/><br/>
 Password:   <input type="password"  name="userpassword"/><br/><br/>
 <input type="submit" name="Login" value="Login"/>
-<a href="ChangePassword">Change Password?</a>
+<a href="ChangePassword">Change Password?</a><br/><br/>
+<a href="insert">Register Here!!</a><br/><br/>
+
 </body>
 </html>

@@ -9,9 +9,9 @@
 <body>
 <form action="changepassword" method="POST">
 User Id: <input type="text"  name="userid"/><br/><br/>
-Original Password:   <input type="text"  name="userpassword"/><br/><br/>
-New Password:   <input type="text"  name="newpassword"/><br/><br/>
-Confirm Password: <input type="text"  name="confirmpassword"/><br/><br/>
+Original Password:   <input type="password"  name="userpassword"/><br/><br/>
+New Password:   <input type="password"  name="newpassword"/><br/><br/>
+Confirm Password: <input type="password"  name="confirmpassword"/><br/><br/>
 <input type="submit" name="ChangePassword" value="Change Password"/>
 </body>
 </html>

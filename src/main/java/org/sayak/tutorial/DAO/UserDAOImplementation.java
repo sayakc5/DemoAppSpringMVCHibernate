@@ -6,6 +6,7 @@ import java.sql.SQLException;*/
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 
 /*import javax.sql.DataSource;*/
@@ -13,6 +14,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Order;
 import org.sayak.tutorial.entity.User;
 import org.sayak.tutorial.entity.UserPassword;
 /*import org.springframework.beans.factory.annotation.Autowired;
@@ -86,7 +88,9 @@ return alluser;
 	    try{
 	    session=sessionFactory.openSession();
 	    session.beginTransaction();
-	    alluser=session.createCriteria(User.class).list();
+	    Criteria cr=session.createCriteria(User.class);
+	    alluser=cr.addOrder(Order.asc("id")).list();
+	    //alluser=session.createCriteria(User.class).list();
 	    session.getTransaction().commit();
 	    return alluser;
 	    }

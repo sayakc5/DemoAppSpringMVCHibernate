@@ -87,7 +87,7 @@ public ModelAndView saveandupdate(HttpServletRequest request) throws Exception {
     u.setAddress(request.getParameter("useraddress"));
     uservice.updateuser_service(u);
     
-       	return new ModelAndView("redirect:/hello");
+       	return new ModelAndView("redirect:/display");
    }
 @RequestMapping(value="/add",method=RequestMethod.POST)
 public ModelAndView newuser(HttpServletRequest request) throws Exception {
@@ -102,14 +102,15 @@ public ModelAndView newuser(HttpServletRequest request) throws Exception {
     u.setUserPassword(pass);
     uservice.adduser_service(u);
     
-       	return new ModelAndView("redirect:/hello");
+       	return new ModelAndView("redirect:/Login");
    }
 @RequestMapping(value="/delete",method=RequestMethod.GET)
 public ModelAndView removeuser(HttpServletRequest request) throws Exception {
 	
 	ModelAndView mav = new ModelAndView("delete");
 	uservice.deleteuser_service(Integer.parseInt(request.getParameter("id")));
-    mav.setViewName("helloworld");
+	mav.addObject("users",uservice.getalluser_service());
+    mav.setViewName("display");
     return mav;
    }
 @RequestMapping(value="/login",method=RequestMethod.POST)
